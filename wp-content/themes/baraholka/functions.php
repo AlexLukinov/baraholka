@@ -160,8 +160,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 function energy_form_handler() {
-//    var_dump($_FILES);
-//    die();
     $post_id = wp_insert_post(array (
         'post_type' => 'energy',
         'post_title' => $_POST['energy_nazv'],
@@ -177,58 +175,34 @@ function energy_form_handler() {
         add_post_meta($post_id, 'energy_ped', $_POST['energy_ped']);
         add_post_meta($post_id, 'energy_sopr', $_POST['energy_sopr']);
         add_post_meta($post_id, 'energy_adres', $_POST['energy_adres']);
-        add_post_meta($post_id, 'energy_email', $_POST['energy_email']);
+        add_post_meta($post_id, 'energy_e-mail', $_POST['energy_email']);
         add_post_meta($post_id, 'energy_tel', $_POST['energy_tel']);
         add_post_meta($post_id, 'energy_nom', $_POST['energy_nom']);
         add_post_meta($post_id, 'energy_kat', $_POST['energy_kat']);
         add_post_meta($post_id, 'energy_name-dance', $_POST['energy_name-dance']);
         add_post_meta($post_id, 'energy_time', $_POST['energy_time']);
 
-        $uploadedfile = &$_FILES['energy_foto'];
-        $uploadedfile = &$_FILES['energy_foto'];
-        $overrides = array( 'test_form' => false );
-
-        $movefile = wp_handle_upload( $uploadedfile, $overrides );
-//        $filename = $_FILES['energy_foto']['name'];
-//        var_dump($movefile['file']);
-//        die();
-
-//        $filetype = wp_check_filetype( basename( $filename ), null );
-
-//        $wp_upload_dir = wp_upload_dir();
-
-//        $attachment = array(
-//            'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
-//            'guid'           => $movefile['url'],
-//            'post_mime_type' => $filetype['type'],
-//            'post_title'     => preg_replace( '/\.[^.]+$/', '', $filename ),
-//            'post_content'   => '',
-//            'post_status'    => 'inherit'
-//        );
-
-
-//        $attachment_id = wp_insert_attachment( $attachment, $filename, $post_id, true );
-//        var_dump($attachment_id);
-//        die();
-//        require_once( ABSPATH . 'wp-admin/includes/image.php' );
-//        $attach_data = wp_generate_attachment_metadata( $attachment_id, $filename );
-//        wp_update_attachment_metadata( $attachment_id, $attach_data );
-        $attachment_id = pods_attachment_import ( $movefile['url'], $post_id );
-//        $data = array(
-//            'energy_foto'  => $_FILES['energy_foto'] ,
-//        );
-//get pods object for item of ID $id
-        $data = array(
-            'energy_foto'       => array(
-                'id'    => $attachment_id,
-                'title' => 'Energy foto'
-            )
-        );
-        $pod = pods( 'energy', $post_id );
-//update the item and return item id in $item
-        $item = $pod->save( $data);
+        handle_attachment('energy_foto', $post_id);
+        handle_attachment('energy_video', $post_id);
+        handle_attachment('energy_spisok', $post_id);
     }
 }
 add_action( 'admin_post_nopriv_energy_form', 'energy_form_handler' );
 add_action( 'admin_post_energy_form', 'energy_form_handler' );
+
+function handle_attachment($attach_name, $post_id) {
+    $overrides = array( 'test_form' => false );
+
+    $file = &$_FILES[$attach_name];
+    $movefile = wp_handle_upload( $file, $overrides );
+    $file_att_id = pods_attachment_import ( $movefile['url'], $post_id );
+    $data_file = array(
+        $attach_name       => array(
+            'id'    => $file_att_id,
+            'title' => $attach_name
+        )
+    );
+    $pod_file = pods( 'energy', $post_id );
+    $item_file = $pod_file->save( $data_file);
+}
 
