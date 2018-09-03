@@ -191,7 +191,12 @@ add_action( 'admin_post_nopriv_energy_form', 'energy_form_handler' );
 add_action( 'admin_post_energy_form', 'energy_form_handler' );
 
 function handle_attachment($attach_name, $post_id) {
-    $overrides = array( 'test_form' => false );
+    $overrides = array(
+        'test_form' => false,
+        'unique_filename_callback' => function ($dir, $name, $ext) use($post_id, $attach_name) {
+            return $post_id.'_'.$attach_name.$ext;
+        }
+    );
 
     $file = &$_FILES[$attach_name];
     $movefile = wp_handle_upload( $file, $overrides );
@@ -204,5 +209,9 @@ function handle_attachment($attach_name, $post_id) {
     );
     $pod_file = pods( 'energy', $post_id );
     $item_file = $pod_file->save( $data_file);
+}
+
+function my_cust_filename($dir, $name, $ext){
+    return $name.$ext;
 }
 
