@@ -32,14 +32,14 @@ $(document).ready(function () {
             }, 1200);
         });
     });
-    // $(document).bind( 'mousewheel', function (e) {
-    //     var nt = $(document.body).scrollTop()-(e.deltaY*e.deltaFactor*500);
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     $(document.body).stop().animate( {
-    //         scrollTop : nt
-    //     } , 500 , 'easeInOutCubic' );
-    // } );
+    $(document).bind( 'mousewheel', function (e) {
+        var nt = $(document.body).scrollTop()-(e.deltaY*e.deltaFactor*500);
+        e.preventDefault();
+        e.stopPropagation();
+        $(document.body).stop().animate( {
+            scrollTop : nt
+        } , 500 , 'easeInOutCubic' );
+    } );
 });
 
 function initSlider() {
