@@ -20,6 +20,26 @@ $(document).ready(function () {
         $(this).find(".hamburgerIcon").toggleClass("open");
         $('#menu-mobile').toggleClass("nav_mobile");
     });
+
+    $(function() {
+        $('nav a').click(function(event) {
+            event.preventDefault();
+            var href=$(this).attr('href');
+            var target=$(href);
+            var top=target.offset().top;
+            $('html,body').animate({
+                scrollTop: top
+            }, 1200);
+        });
+    });
+    // $(document).bind( 'mousewheel', function (e) {
+    //     var nt = $(document.body).scrollTop()-(e.deltaY*e.deltaFactor*500);
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     $(document.body).stop().animate( {
+    //         scrollTop : nt
+    //     } , 500 , 'easeInOutCubic' );
+    // } );
 });
 
 function initSlider() {
@@ -187,7 +207,7 @@ function getSinPath(options) {
 // табы
 (function($) {
     $(function() {
-        $('ul.tabs__caption').each(function() {
+        $('#energy-tabs').each(function() {
             $(this).find('li').each(function(i) {
                 $(this).click(function(){
                     if ($('#third-tab').hasClass('active')) {
@@ -200,7 +220,7 @@ function getSinPath(options) {
                             $(this).addClass('active').siblings().removeClass('active')
                                 .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(i).addClass('active');
                         } else {
-                            $('.submit-button').first().trigger('click');
+                            $('#submit-button').first().trigger('click');
                         }
                     } else {
                         if (Boolean(
@@ -224,4 +244,40 @@ function getSinPath(options) {
         });
 
     })
+
+    $(function() {
+        $('#stavni-tabs').each(function() {
+            $(this).find('li').each(function(i) {
+                $(this).click(function(){
+                    if ($('#third-tab').hasClass('active')) {
+                        if (Boolean(
+                            $("#energy_name-dance").val() &&
+                            $("#energy_time").val() &&
+                            $("#energy_kol").val()
+                        )) {
+                            $(this).addClass('active').siblings().removeClass('active')
+                                .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(i).addClass('active');
+                        } else {
+                            $('#submit-button').first().trigger('click');
+                        }
+                    } else {
+                        if (Boolean(
+                            $("#stavni_nazv").val() &&
+                            $("#stavni_gorod").val() &&
+                            $("#stavni_ruk").val() &&
+                            $("#stavni_e-mail").val() &&
+                            $("#stavni_tel").val()
+                        )) {
+                            $(this).addClass('active').siblings().removeClass('active')
+                                .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(i).addClass('active');
+                        } else {
+                            $('#submit-button').first().trigger('click');
+                        }
+                    }
+                });
+            });
+        });
+
+    })
 })(jQuery)
+
