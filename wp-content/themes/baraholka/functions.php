@@ -175,22 +175,26 @@ function energy_form_handler() {
         add_post_meta($post_id, 'energy_ped', $_POST['energy_ped']);
         add_post_meta($post_id, 'energy_sopr', $_POST['energy_sopr']);
         add_post_meta($post_id, 'energy_adres', $_POST['energy_adres']);
-        add_post_meta($post_id, 'energy_e-mail', $_POST['energy_email']);
+        add_post_meta($post_id, 'energy_e-mail', $_POST['energy_e-mail']);
         add_post_meta($post_id, 'energy_tel', $_POST['energy_tel']);
         add_post_meta($post_id, 'energy_nom', $_POST['energy_nom']);
         add_post_meta($post_id, 'energy_kat', $_POST['energy_kat']);
         add_post_meta($post_id, 'energy_name-dance', $_POST['energy_name-dance']);
         add_post_meta($post_id, 'energy_time', $_POST['energy_time']);
 
-        handle_attachment('energy_foto', $post_id);
-        handle_attachment('energy_video', $post_id);
-        handle_attachment('energy_spisok', $post_id);
+        handle_energy_attachment('energy_foto', $post_id);
+        handle_energy_attachment('energy_video', $post_id);
+        handle_energy_attachment('energy_spisok', $post_id);
+
+        $_SESSION['success_message'] = 'Ваша заявка принята!';
+        wp_redirect( home_url() );
+        exit;
     }
 }
 add_action( 'admin_post_nopriv_energy_form', 'energy_form_handler' );
 add_action( 'admin_post_energy_form', 'energy_form_handler' );
 
-function handle_attachment($attach_name, $post_id) {
+function handle_energy_attachment($attach_name, $post_id) {
     $overrides = array(
         'test_form' => false,
         'unique_filename_callback' => function ($dir, $name, $ext) use($post_id, $attach_name) {
@@ -208,6 +212,57 @@ function handle_attachment($attach_name, $post_id) {
         )
     );
     $pod_file = pods( 'energy', $post_id );
+    $item_file = $pod_file->save( $data_file);
+}
+
+function stavni_form_handler() {
+    $post_id = wp_insert_post(array (
+        'post_type' => 'stavni',
+        'post_title' => $_POST['stavni_nazv'],
+        'post_content' => '',
+        'post_status' => 'publish',
+    ));
+
+    if ($post_id) {
+        // insert post meta
+        add_post_meta($post_id, 'stavni_nazv', $_POST['stavni_nazv']);
+        add_post_meta($post_id, 'stavni_gorod', $_POST['stavni_gorod']);
+        add_post_meta($post_id, 'stavni_ruk', $_POST['stavni_ruk']);
+        add_post_meta($post_id, 'stavni_e-mail', $_POST['stavni_e-mail']);
+        add_post_meta($post_id, 'stavni_tel', $_POST['stavni_tel']);
+        add_post_meta($post_id, 'stavni_name-dance', $_POST['stavni_name-dance']);
+        add_post_meta($post_id, 'stavni_time', $_POST['stavni_time']);
+        add_post_meta($post_id, 'stavni_kol', $_POST['stavni_kol']);
+
+        handle_stavni_attachment('stavni_foto', $post_id);
+        handle_stavni_attachment('stavni_video', $post_id);
+
+        $_SESSION['success_message'] = 'Ваша заявка принята!';
+        wp_redirect( home_url() );
+        exit;
+    }
+}
+add_action( 'admin_post_nopriv_stavni_form', 'stavni_form_handler' );
+add_action( 'admin_post_stavni_form', 'stavni_form_handler' );
+
+function handle_stavni_attachment($attach_name, $post_id) {
+    $overrides = array(
+        'test_form' => false,
+        'unique_filename_callback' => function ($dir, $name, $ext) use($post_id, $attach_name) {
+            return $post_id.'_'.$attach_name.$ext;
+        }
+    );
+
+    $file = &$_FILES[$attach_name];
+    $movefile = wp_handle_upload( $file, $overrides );
+    $file_att_id = pods_attachment_import ( $movefile['url'], $post_id );
+    $data_file = array(
+        $attach_name       => array(
+            'id'    => $file_att_id,
+            'title' => $attach_name
+        )
+    );
+    $pod_file = pods( 'stavni', $post_id );
     $item_file = $pod_file->save( $data_file);
 }
 

@@ -67,6 +67,12 @@
         </div>
     </div>
 </header>
+<?php
+if (isset($_SESSION['success_message'] )) {
+    ?>
+    <p class="alert alert-danger"><?php echo $_SESSION['success_message']; ?></p>
+    <?php unset($_SESSION['success_message']); ?>
+<?php } ?>
 <div class="page_begin">
     <nav>
         <a href="#sponsori-yakor">Спонсоры</a>

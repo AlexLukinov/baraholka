@@ -20,8 +20,6 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/path-slider.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
-    <!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.validate.min.js"></script>-->
-    <!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery-ui.min.js"></script>-->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui.css">
@@ -29,13 +27,12 @@
     <title>Форма заявки</title>
 </head>
 
-<form>
   <div class="page-form">
+  <form id="stavni-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
     <h2>Форма заявки на участие в фестивале экспериментальной и современной хореографии "STAVni"</h2>
-      <form id="stavni-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
     <div class="tabs">
-        <input type="hidden" name="action" value="stavni_form">
-      <ul class="tabs__caption">
+      <input type="hidden" name="action" value="stavni_form">
+      <ul id="stavni-tabs" class="tabs__caption">
         <li class="active">
           <span class="only"><i class="fas fa-info-circle"></i></span>
           <span class="nav-span">Информация о коллективе и руководителе</span>
@@ -44,7 +41,7 @@
           <span class="only"><i class="fas fa-camera"></i></span>
           <span class="nav-span">Фото коллектива</span>
         </li>
-        <li>
+        <li id="third-tab">
           <span class="only"><i class="fas fa-music"></i></span>
           <span class="nav-span">Информация о танцевальной композиции</span>
         </li>
@@ -58,7 +55,7 @@
       <div class="tabs__content active">
         <div class="tab-content animated fadeIn" id="tab-content1">
           <div class="name">
-            <img class="profile" src="img/logo.png"/>
+            <img class="profile" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
             <div class="information">
               <h3 class="user">Основная информация</h3>
               <h5 class="account">все поля обязательны для заполнения</h5>
@@ -144,8 +141,9 @@
 
           <h3>Прикрепите видео танцевальной композиции</h3>
           <input type="file" name="stavni_video" class="baraholka-file">
-          <input type="submit" value="Отправить видео" class="otpravit">
-          <button class="mountainbutton">Далее</button>
+<!--          <input type="submit" value="Отправить видео" class="otpravit">-->
+          <input type="submit" id="submit-button" value="Сохранить" class="mountainbutton">
+<!--          <button class="mountainbutton">Далее</button>-->
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@
     <form id="energy-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
         <input type="hidden" name="action" value="energy_form">
         <div class="tabs">
-            <ul class="tabs__caption">
+            <ul id="energy-tabs" class="tabs__caption">
                 <li class="active">
                     <span class="only"><i class="fas fa-info-circle"></i></span>
                     <span class="nav-span">Информация о коллективе и руководителе</span>
@@ -125,7 +125,7 @@
                     </div>
                     <div class="formcontainers">
                         <div class="formfields">
-                            <select size="5" id="energy_nom" class="texter" name="energy_nom"  multiple required="required">
+                            <select id="energy_nom" class="texter" name="energy_nom" required="required">
                                 <option disabled>Выберите номинацию</option>
                                 <option value="Чебурашка">Чебурашка</option>
                                 <option selected value="Крокодил Гена">Крокодил Гена</option>
