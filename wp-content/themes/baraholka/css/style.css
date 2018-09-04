@@ -956,11 +956,17 @@ h3.text-color {
 li a {
     color: #cbffc8;
 }
+
+.btn-align a {
+    color: #ff9b9d ;
+}
+.btn-align a:hover {
+    color: #cbffc8 ;
+}
 .btn-align {
     align-self: center;
     margin-top: 20px;
     font-size: 20px;
-    color: #ff9b9d;
 }
 /*Форма */
 
@@ -1109,7 +1115,7 @@ ul.tabs__caption{
 ul.tabs__caption li {
     display: flex;
     align-items: center;
-    height: 20vh;
+    height: 24.55%;
     cursor: pointer;
     border: 2px solid #5f3068;
 }
@@ -1119,23 +1125,15 @@ ul.tabs__caption li.active{
 }
 
 .experiment {
-    position: relative;
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background: white;
+    height: 80vh;
     box-shadow: 1px 1px 40px 1px #4d4d4d;
 }
 
 .tabs {
-    border: 2px solid #5f3068;
     color: white;
     display: flex;
     z-index: 10;
-    height: 80%;
-    width: 90%;
 }
 
 .tabs input[type=radio] {
@@ -1179,7 +1177,9 @@ ul.tabs__caption li.active{
 .nav-span {
     text-align: left;
     font-family: MontLights;
-    padding: 30px;
+    padding: 10px;
+    font-size: 15px;
+    word-break: break-word;
 }
 .only {
     padding-left: 10px;
@@ -1536,11 +1536,10 @@ footer .fa-arrow-alt-circle-up {
     }
     .experiment {
         width: 100%;
-        height: 95vh;
     }
-    .tabs {
-        height: 66%;
-    }
+    /*.tabs {*/
+        /*height: 66%;*/
+    /*}*/
     .page-form h2 {
         font-size: 16px;
         margin: 20px auto;

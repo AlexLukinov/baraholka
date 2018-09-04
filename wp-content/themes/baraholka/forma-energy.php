@@ -125,7 +125,13 @@
                     </div>
                     <div class="formcontainers">
                         <div class="formfields">
-                            <input id="energy_nom" class="texter" name="energy_nom" type="text" placeholder="Номинация" required="required" />
+                            <select size="5" id="energy_nom" class="texter" name="energy_nom"  multiple required="required">
+                                <option disabled>Выберите номинацию</option>
+                                <option value="Чебурашка">Чебурашка</option>
+                                <option selected value="Крокодил Гена">Крокодил Гена</option>
+                                <option value="Шапокляк">Шапокляк</option>
+                                <option value="Крыса Лариса">Крыса Лариса</option>
+                            </select>
                             <label class="formlabel">Номинация</label>
                         </div>
                         <div class="formfields">

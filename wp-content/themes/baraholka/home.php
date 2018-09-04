@@ -69,10 +69,10 @@
 </header>
 <div class="page_begin">
     <nav>
-        <a href="#">Спонсоры</a>
-        <a href="#">STAVни</a>
-        <a href="#" class="nav-a-energi">Энергия искусств</a>
-        <a href="#">Baraholka Battle</a>
+        <a href="#sponsori-yakor">Спонсоры</a>
+        <a href="#stavni-yakor">STAVни</a>
+        <a href="#energi-yakor" class="nav-a-energi">Энергия искусств</a>
+        <a href="#battle-yakor">Baraholka Battle</a>
         <a href="index.html">Главная</a>
     </nav>
     <div id="menu-mobile" class="animated fadeIn" style="display: none">
@@ -107,7 +107,7 @@
                     <h3>«Baraholka Battle»</h3>
                     <div class="divader"></div>
                     <h3>3/11/2018 7:00</h3>
-                    <div class="btn from-top">Стать частью</div>
+                    <div class="btn from-top"><a href="https://vk.com/battle_baraholka">Стать частью</a></div>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@
                     <h3>«STAVни»</h3>
                     <div class="divader"></div>
                     <h3>2-3/11/2018</h3>
-                    <div class="btn from-right">Стать частью</div>
+                    <div class="btn from-right"><a href="/stavni-form">Стать частью</a></div>
                     <!--<div class="btn from-middle">From Middle</div>-->
                     <!--<div class="btn from-bottom">From Bottom</div>-->
                 </div>
@@ -146,7 +146,7 @@
 
 </div>
 
-<div class="page-battle">
+<div class="page-battle" id="battle-yakor">
     <div class="column-content">
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
         <div class="info">
@@ -182,7 +182,7 @@
         </div>
     </div>
 </div>
-<div class="page-energi">
+<div class="page-energi" id="energi-yakor">
     <div class="column-content">
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
         <div class="info">
@@ -216,11 +216,11 @@
                 участника. (Обязательно)
             </h3>
             <div class="btn from-left btn-align">скачать положение</div>
-            <div class="btn from-top btn-align">Подать заявку</div>
+            <div class="btn from-top btn-align"><a href="/energy-form">Подать заявку</a></div>
         </div>
     </div>
 </div>
-<div class="page-battle page-stavni">
+<div class="page-battle page-stavni" id="stavni-yakor">
     <div class="column-content">
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
         <div class="info">
@@ -273,7 +273,7 @@
         <a href="#" class="path-slider__item path-slider__item--10"><i class="fas fa-angle-double-right"></i><div class="item__circle"></div></a>
     </div>
 </div>
-<div class="sponsori">
+<div class="sponsori" id="sponsori-yakor">
     <h2 class="org">Если вы станете спонсором мероприятия, мы разместим ваш логотип здесь</h2>
     <div class="sponsori-tabl">
         <div class="sponsori-tabl_item"></div>

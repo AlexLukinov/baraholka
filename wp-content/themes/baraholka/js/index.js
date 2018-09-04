@@ -224,4 +224,23 @@ function getSinPath(options) {
         });
 
     })
+    $(function() {
+        $('nav a').click(function(event) {
+            event.preventDefault();
+            var href=$(this).attr('href');
+            var target=$(href);
+            var top=target.offset().top;
+            $('html,body').animate({
+                scrollTop: top
+            }, 1200);
+        });
+    });
+    // $(document).bind( 'mousewheel', function (e) {
+    //     var nt = $(document.body).scrollTop()-(e.deltaY*e.deltaFactor*500);
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     $(document.body).stop().animate( {
+    //         scrollTop : nt
+    //     } , 500 , 'easeInOutCubic' );
+    // } );
 })(jQuery)
