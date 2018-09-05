@@ -166,8 +166,8 @@
                         Оплата осуществляется, либо на месте проведения баттла, либо до
                         мероприятия переводом на карту.
                         Вход для зрителей на финалы баттла - 100 рублей</p>
-                    <div class="btn from-left btn-align">скачать положение</div>
-                    <div class="btn from-middle btn-align">Подать заявку</div>
+                    <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
+                    <div class="btn from-middle btn-align"><a href="#">Подать заявку</a></div>
                 </div>
                 <div class="content-right">
                     <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/battle.png" alt="Baraholka Battle">
@@ -178,7 +178,7 @@
                 </div>
             </div>
         </div>
-        <div class="page-energi" id="energi-yakor">
+        <div class="page-energi section" id="energi-yakor">
             <div class="column-content">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
                 <div class="info">
@@ -211,12 +211,12 @@
                         Дополнительный взнос в размере 100 руб. – Страхование жизни и здоровья
                         участника. (Обязательно)
                     </h3>
-                    <div class="btn from-left btn-align">скачать положение</div>
+                    <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
                     <div class="btn from-top btn-align"><a href="/energy-form">Подать заявку</a></div>
                 </div>
             </div>
         </div>
-        <div class="page-battle page-stavni" id="stavni-yakor">
+        <div class="page-battle page-stavni section" id="stavni-yakor">
             <div class="column-content">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
                 <div class="info">
@@ -238,8 +238,8 @@
                         день мероприятия 450 рублей с человека. Дополнительный взнос в размере 100 руб. – Страхование жизни и здоровья
                         участника. (Обязательно)
                     </p>
-                    <div class="btn from-left btn-align">скачать положение</div>
-                    <div class="btn from-middle btn-align">Подать заявку</div>
+                    <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
+                    <div class="btn from-middle btn-align"><a href="#">Подать заявку</a></div>
                 </div>
                 <div class="content-right">
                     <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/stavni.png" alt="Baraholka Battle">
@@ -254,7 +254,7 @@
             </div>
         </div>
         <h2 class="org">Над проектом работают</h2>
-        <div class="page_begin_decoration">
+        <div class="page_begin_decoration section">
             <div class="path-slider">
                 <!-- Slider items -->
                 <a href="#" class="path-slider__item path-slider__item--1"><i class="fas fa-angle-double-right"></i><div class="item__circle"></div></a>
@@ -270,7 +270,7 @@
                 <a href="#" class="path-slider__item path-slider__item--11"><i class="fas fa-angle-double-right"></i><div class="item__circle"></div></a>
             </div>
         </div>
-        <div class="sponsori" id="sponsori-yakor">
+        <div class="sponsori section" id="sponsori-yakor">
             <h2 class="org">Если вы станете спонсором мероприятия, мы разместим ваш логотип здесь</h2>
             <div class="sponsori-tabl">
                 <div class="sponsori-tabl_item"></div>

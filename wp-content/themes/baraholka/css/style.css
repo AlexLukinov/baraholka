@@ -42,7 +42,7 @@ a {
 h1 {
     font-family: "Panton-Bold";
     font-size: 115px;
-    color: #654785;
+    color: #c5f8c2;
     letter-spacing: 0;
 }
 h2  {
@@ -280,14 +280,11 @@ nav a{
 }
 
 .caption_h2 {
-    /*width: 511px;*/
-    color: #CBFFC8;
+    color: #6d4f8d;
     font-size: 1em;
     text-transform: lowercase;
 }
-.caption_h1 {
-    /*width: 712px;*/
-}
+
 .page_content {
     background-image: url("../img/bg1.png");
     margin: 50px auto;
@@ -893,8 +890,6 @@ h1.main, p.demos {
     align-items: center;
     width: 80%;
     height: 100vh;
-    /*background-color: #200850;*/
-    /*background-image: url("../img/bg-battle.jpg");*/
 }
 .column-content {
     display: flex;
@@ -913,16 +908,7 @@ h1.main, p.demos {
     width: 80%;
     height: 70vh;
     display: flex;
-    /*background-color: #200850;*/
-    /*box-shadow:1px -3px 50px 1px #287607;*/
 }
-/*.page-energi {*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*width: 100%;*/
-    /*height: 100vh;*/
-/*}*/
 .page-energi-container {
     justify-content: center;
     align-items: center;
@@ -964,7 +950,7 @@ li a {
 }
 
 .btn-align a {
-    color: #ff9b9d ;
+    color: #a186bd ;
 }
 .btn-align a:hover {
     color: #cbffc8 ;
