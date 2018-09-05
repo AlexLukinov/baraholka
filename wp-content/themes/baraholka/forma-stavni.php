@@ -26,10 +26,11 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <title>Форма заявки</title>
 </head>
-
+<body>
   <div class="page-form">
+      <a href="#" class="back"><i class="fas fa-arrow-left"></i></a>
+      <h2>Форма заявки на участие в фестивале экспериментальной и современной хореографии "STAVni"</h2>
   <form id="stavni-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
-    <h2>Форма заявки на участие в фестивале экспериментальной и современной хореографии "STAVni"</h2>
     <div class="tabs">
       <input type="hidden" name="action" value="stavni_form">
       <ul id="stavni-tabs" class="tabs__caption">
@@ -58,7 +59,7 @@
             <img class="profile" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
             <div class="information">
               <h3 class="user">Основная информация</h3>
-              <h5 class="account">все поля обязательны для заполнения</h5>
+              <h5 class="account">Будьте внимательны при заполнении</h5>
             </div>
           </div>
           <div class="formcontainers">

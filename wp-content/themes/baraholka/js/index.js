@@ -1,10 +1,3 @@
-// Function to get a path (string) similar to sin function. Can accept following options that you can use for customization:
-// - width: Width to draw the path
-// - height: Height to draw the path
-// - addWidth: Additional width to overflow actual width
-// - controlSep: Bigger values of this parameter will add more curvature, and vice versa
-// - curves: Number of curves (iterations) to draw
-
 
 
 
@@ -32,15 +25,66 @@ $(document).ready(function () {
             }, 1200);
         });
     });
-    $(document).bind( 'mousewheel', function (e) {
-        var nt = $(document.body).scrollTop()-(e.deltaY*e.deltaFactor*500);
+    // модальное окно
+    $(".modal").each( function(){
+        $(this).wrap('<div class="overlay"></div>')
+    });
+
+    $(".open-modal").on('click', function(e){
         e.preventDefault();
-        e.stopPropagation();
-        $(document.body).stop().animate( {
-            scrollTop : nt
-        } , 500 , 'easeInOutCubic' );
-    } );
+        e.stopImmediatePropagation;
+
+        var $this = $(this),
+            modal = $($this).data("modal");
+
+        $(modal).parents(".overlay").addClass("open");
+        setTimeout( function(){
+            $(modal).addClass("open");
+        }, 350);
+
+        $(document).on('click', function(e){
+            var target = $(e.target);
+
+            if ($(target).hasClass("overlay")){
+                $(target).find(".modal").each( function(){
+                    $(this).removeClass("open");
+                });
+                setTimeout( function(){
+                    $(target).removeClass("open");
+                }, 350);
+            }
+
+        });
+
+    });
+
+    $(".close-modal").on('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation;
+
+        var $this = $(this),
+            modal = $($this).data("modal");
+
+        $(modal).removeClass("open");
+        setTimeout( function(){
+            $(modal).parents(".overlay").removeClass("open");
+        }, 350);
+
+    });
+    // $(document).ready(function() {
+    //     $('#fullpage').fullpage({
+    //         //options here
+    //         autoScrolling:true,
+    //         scrollHorizontally: true
+    //     });
+    //
+    //     //methods
+    //     $.fn.fullpage.setAllowScrolling(false);
+    // });
 });
+
+
+
 
 function initSlider() {
 

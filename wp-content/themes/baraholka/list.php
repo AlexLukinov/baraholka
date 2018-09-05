@@ -14,12 +14,13 @@ $count = 0;
 
 ?>
 <div>
-    <table>
-        <thead>
-            <tr>№</tr>
-            <tr>Название</tr>
-            <tr>Вид</tr>
-        </thead>
+    <caption>Список подавших заявку на участие во Всероссийском танцевальном проекте "Барахолка"</caption>
+    <table class="spisok-zayavok" width="50%" border="1" cellpadding="4" cellspacing="0">
+        <tr>
+            <th>№</th>
+            <th>Название</th>
+            <th>Вид</th>
+        </tr>
         <tbody>
         <?php
         if( $data->have_posts() ) :

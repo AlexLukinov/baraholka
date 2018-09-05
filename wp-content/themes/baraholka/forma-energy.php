@@ -31,6 +31,7 @@
 
 <body>
 <div class="page-form">
+    <a href="#" class="back"><i class="fas fa-arrow-left"></i></a>
     <h2>Форма заявки на участие в фестивале-конкурсе "Энергия искусств"</h2>
     <form id="energy-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
         <input type="hidden" name="action" value="energy_form">
@@ -62,7 +63,7 @@
                         <img class="profile" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
                         <div class="information">
                             <h3 class="user">Основная информация</h3>
-                            <h5 class="account">все поля обязательны для заполнения</h5>
+                            <h5 class="account">Будьте внимательны при заполнении</h5>
                         </div>
                     </div>
                     <div class="formcontainers">
@@ -71,27 +72,27 @@
                             <label class="formlabel">Название</label>
                         </div>
                         <div class="formfields">
-                            <input class="texter" type="text" id="energy_gorod" name="energy_gorod" placeholder="Страна, город" required="required" />
+                            <input class="texter" type="text" id="energy_gorod" name="energy_gorod" placeholder="Страна, город" />
                             <label class="formlabel">Страна, город</label>
                         </div>
                         <div class="formfields">
-                            <input class="texter" type="text" id="energy_ruk" name="energy_ruk" placeholder="Руководитель (ФИО)" required="required"/>
+                            <input class="texter" type="text" id="energy_ruk" name="energy_ruk" placeholder="Руководитель (ФИО)" />
                             <label class="formlabel">Руководитель</label>
                         </div>
                         <div class="formfields">
-                            <input class="texter" type="text" id="energy_ped" name="energy_ped" placeholder="Педагог(и)" required="required" />
+                            <input class="texter" type="text" id="energy_ped" name="energy_ped" placeholder="Педагог(и)" />
                             <label class="formlabel">Педагог(и)</label>
                         </div>
                         <div class="formfields">
-                            <input class="texter" type="text" id="energy_sopr" name="energy_sopr" placeholder="Сопровождающие" required="required" />
+                            <input class="texter" type="text" id="energy_sopr" name="energy_sopr" placeholder="Сопровождающие"  />
                             <label class="formlabel">Сопровождающие</label>
                         </div>
                         <div class="formfields">
-                            <input class="texter" type="text" id="energy_adres" name="energy_adres" placeholder="Адрес" required="required" />
+                            <input class="texter" type="text" id="energy_adres" name="energy_adres" placeholder="Адрес"  />
                             <label class="formlabel">Адрес</label>
                         </div>
                         <div class="formfields">
-                            <input class="texter" type="text" id="energy_e-mail" name="energy_e-mail" placeholder="E-mail" required="required" />
+                            <input class="texter" type="text" id="energy_e-mail" name="energy_e-mail" placeholder="E-mail" />
                             <label class="formlabel">E-mail</label>
                         </div>
                         <div class="formfields">
@@ -127,10 +128,15 @@
                         <div class="formfields">
                             <select id="energy_nom" class="texter" name="energy_nom" required="required">
                                 <option disabled>Выберите номинацию</option>
-                                <option value="Чебурашка">Чебурашка</option>
-                                <option selected value="Крокодил Гена">Крокодил Гена</option>
-                                <option value="Шапокляк">Шапокляк</option>
-                                <option value="Крыса Лариса">Крыса Лариса</option>
+                                <option value="Народный танец">Народный танец</option>
+                                <option selected value="Народная стилизация">Народная стилизация</option>
+                                <option value="Street Dance">Street Dance</option>
+                                <option value="Эстрадный танец">Эстрадный танец</option>
+                                <option value="Современная хореография">Современная хореография</option>
+                                <option value=" Шоу на основе бальной хореографии"> Шоу на основе бальной хореографии</option>
+                                <option value="Спортивная хореография">Спортивная хореография</option>
+                                <option value="Lady Style">Lady Style</option>
+                                <option value="Оригинальный жанр">Оригинальный жанр</option>
                             </select>
                             <label class="formlabel">Номинация</label>
                         </div>
