@@ -7,7 +7,15 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    initSlider();
+    if (!window.location.pathname.includes('form')) {
+        initSlider();
+        $(function () {
+            $.scrollify({
+                section: ".section",
+                interstitialSection: ".inter"
+            });
+        });
+    }
 
     $(".menu_mobile").on('click',function(){
         $(this).find(".hamburgerIcon").toggleClass("open");
@@ -37,11 +45,7 @@ $(document).ready(function () {
         var $this = $(this),
             modal = $($this).data("modal");
 
-        $(modal).parents(".overlay").addClass("open");
-        setTimeout( function(){
-            $(modal).addClass("open");
-        }, 350);
-
+        showModal(modal);
         $(document).on('click', function(e){
             var target = $(e.target);
 
@@ -72,12 +76,26 @@ $(document).ready(function () {
 
     });
 
-        // $('#fullpage').fullpage({
-        //     //options here
-        //     autoScrolling:true
-        // });
-
+    $('.next-button').click(function () {
+        if($('#first-tab').hasClass('active'))
+        {
+            $('#second-tab').first().trigger('click');
+        } else if ($('#second-tab').hasClass('active'))
+        {
+            $('#third-tab').first().trigger('click');
+        } else if ($('#third-tab').hasClass('active'))
+        {
+            $('#fourth-tab').first().trigger('click');
+        }
+    });
 });
+
+function showModal(modal) {
+    $(modal).parents(".overlay").addClass("open");
+    setTimeout( function(){
+        $(modal).addClass("open");
+    }, 350);
+}
 
 
 
@@ -291,9 +309,9 @@ function getSinPath(options) {
                 $(this).click(function(){
                     if ($('#third-tab').hasClass('active')) {
                         if (Boolean(
-                            $("#energy_name-dance").val() &&
-                            $("#energy_time").val() &&
-                            $("#energy_kol").val()
+                            $("#stavni_name-dance").val() &&
+                            $("#stavni_time").val() &&
+                            $("#stavni_kol").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
                                 .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(i).addClass('active');

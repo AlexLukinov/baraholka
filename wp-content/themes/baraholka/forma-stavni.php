@@ -34,11 +34,11 @@
     <div class="tabs">
       <input type="hidden" name="action" value="stavni_form">
       <ul id="stavni-tabs" class="tabs__caption">
-        <li class="active">
+        <li id="first-tab" class="active">
           <span class="only"><i class="fas fa-info-circle"></i></span>
           <span class="nav-span">Информация о коллективе и руководителе</span>
         </li>
-        <li>
+        <li id="second-tab">
           <span class="only"><i class="fas fa-camera"></i></span>
           <span class="nav-span">Фото коллектива</span>
         </li>
@@ -46,7 +46,7 @@
           <span class="only"><i class="fas fa-music"></i></span>
           <span class="nav-span">Информация о танцевальной композиции</span>
         </li>
-        <li>
+        <li id="fourth-tab">
           <span class="only"><i class="fas fa-video"></i></span>
           <span class="nav-span">Дополнительная информация</span>
         </li>
@@ -84,7 +84,7 @@
               <input class="texter" type="text" name="stavni_tel" id="stavni_tel" placeholder="Телефон, контактный номер" required="required" /="/"/>
               <label class="formlabel">Телефон</label>
             </div>
-            <button class="mountainbutton">Далее</button>
+            <button type="button" class="next-button mountainbutton">Далее</button>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
           </div>
           <input type="file" name="stavni_foto" class="baraholka-file">
 <!--          <input type="submit" value="Отправить фото" class="otpravit">-->
-          <button class="mountainbutton">Далее</button>
+          <button type="button" class="next-button mountainbutton">Далее</button>
         </div>
       </div>
 
@@ -125,7 +125,7 @@
               <input class="texter" type="text" name="stavni_kol" id="stavni_kol" placeholder="Количество человек" required="required" /="/"/>
               <label class="formlabel">Количество человек</label>
             </div>
-            <button class="mountainbutton">Далее</button>
+            <button type="button" class="next-button mountainbutton">Далее</button>
           </div>
         </div>
       </div>
