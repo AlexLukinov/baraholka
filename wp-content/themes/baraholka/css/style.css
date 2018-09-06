@@ -127,8 +127,11 @@ nav a{
     position: relative;
 }
 .page_begin_decoration {
+    display: flex;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .home {
     width: 100%;
@@ -146,7 +149,7 @@ nav a{
 }
 
 .org {
-    margin: 100px auto;
+    margin: 4vh auto;
     text-align: center;
 }
 
@@ -924,7 +927,7 @@ h1.main, p.demos {
 h3.text-color {
     z-index: 1;
     padding: 10px 0px;
-    font-size: 20px;
+    font-size: 18px;
     text-shadow: none;
 }
 .content-img {
@@ -941,7 +944,7 @@ h3.text-color {
 }
 .page-energi-container .content-left h3 {
     text-align: right;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     padding: 10px 0;
 }

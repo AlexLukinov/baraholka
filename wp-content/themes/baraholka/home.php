@@ -93,7 +93,8 @@
                 </div>
                 <div class="home">
                     <div class="caption">
-                        <h1 class="caption_h1 animated zoomIn">БАРАХОЛКА</h1>
+<!--                        <h1 class="caption_h1 animated zoomIn">БАРАХОЛКА</h1>-->
+                        <h1 class="caption_h1 animated zoomIn">Baraholka</h1>
                         <h2 class="caption_h2">Всероссийский танцевальный проект</h2>
                     </div>
                     <div class="meropriyatiya">
@@ -281,8 +282,7 @@
                 <div class="sponsori-tabl_item"></div>
                 <div class="sponsori-tabl_item"></div>
             </div>
-            <div class="btn from-middle btn-align">скачать комерчесское предложение</div>
-            <div class="btn from-middle btn-align">стать спонсорoм</div>
+            <a href="#"><div class="btn from-middle btn-align">скачать комерчесское предложение</div></a>
         </div>
         <div class="section"></div>
     <script>
