@@ -37,11 +37,11 @@
         <input type="hidden" name="action" value="energy_form">
         <div class="tabs">
             <ul id="energy-tabs" class="tabs__caption">
-                <li class="active">
+                <li id="first-tab" class="active">
                     <span class="only"><i class="fas fa-info-circle"></i></span>
                     <span class="nav-span">Информация о коллективе и руководителе</span>
                 </li>
-                <li>
+                <li id="second-tab">
                     <span class="only"><i class="fas fa-camera"></i></span>
                     <span class="nav-span">Фото коллектива</span>
                 </li>
@@ -49,7 +49,7 @@
                     <span class="only"><i class="fas fa-music"></i></span>
                     <span class="nav-span">Информация о танцевальной композиции</span>
                 </li>
-                <li>
+                <li id="fourth-tab">
                     <span class="only"><i class="fas fa-video"></i></span>
                     <span class="nav-span">Дополнительная информация</span>
                 </li>
@@ -99,7 +99,7 @@
                             <input class="texter" type="text" id="energy_tel" name="energy_tel" placeholder="Телефон, контактный номер" required="required" />
                             <label class="formlabel">Телефон</label>
                         </div>
-                        <button type="button" class="mountainbutton">Далее</button>
+                        <button type="button" class="next-button mountainbutton">Далее</button>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                         <h5 class="account">допускается фото в тренировочной одежде</h5>
                     </div>
                     <input type="file" name="energy_foto" class="baraholka-file">
-                    <button type="button" class="mountainbutton">Далее</button>
+                    <button type="button" class="next-button mountainbutton">Далее</button>
                 </div>
             </div>
 
@@ -152,7 +152,7 @@
                             <input id="energy_time" class="texter" type="text" name="energy_time" placeholder="Время танцевальной композиции" required="required" />
                             <label class="formlabel">Время композиции</label>
                         </div>
-                        <button type="button" class="mountainbutton">Далее</button>
+                        <button type="button" class="next-button mountainbutton">Далее</button>
                     </div>
                 </div>
             </div>

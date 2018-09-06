@@ -16,19 +16,16 @@
     </script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
-<!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.fullpage.min.js"></script>-->
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollify.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/path-slider.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
 
-    <!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.validate.min.js"></script>-->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/jquery.fullpage.min.css">-->
     <title>Главная</title>
 </head>
 <body>
@@ -74,6 +71,13 @@
             if (isset($_SESSION['success_message'] )) {
                 ?>
                 <p class="alert alert-danger"><?php echo $_SESSION['success_message']; ?></p>
+                <script>
+                    $(document).ready(function () {
+                       setTimeout(function () {
+                           showModal($('.modal').first());
+                       }, 500);
+                    });
+                </script>
                 <?php unset($_SESSION['success_message']); ?>
             <?php } ?>
             <div class="page_begin">
@@ -245,7 +249,6 @@
                 </div>
                 <div class="content-right">
                     <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/stavni.png" alt="Baraholka Battle">
-                    <!--<img class="content-img" src="img/logo.png" alt="Baraholka Battle">-->
                     <p class="tiser">Фестиваль современной и экспериментальной хореографии «STAVни»
                         - это платформа для новых материалов и экспериментов, это фестиваль
                         воплощенного искусства, демонстрирующий новые идеи и исследования в
@@ -285,24 +288,6 @@
             <a href="#"><div class="btn from-middle btn-align">скачать комерчесское предложение</div></a>
         </div>
         <div class="section"></div>
-    <script>
-        $(document).ready(function() {
-            // $('#fullpage').fullpage({
-            //     //options here
-            //     autoScrolling:true,
-            // });
-            $(function() {
-                $.scrollify({
-                    section : ".section",
-                    // sectionName : "section inter -name",
-                    interstitialSection : ".inter"
-                });
-            });
-
-            //methods
-            // $.fn.fullpage.setAllowScrolling(false);
-        });
-    </script>
 </body>
 <footer>
     <p>Designed &amp; Developed by
