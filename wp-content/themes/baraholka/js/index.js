@@ -72,10 +72,10 @@ $(document).ready(function () {
 
     });
 
-        $('#fullpage').fullpage({
-            //options here
-            autoScrolling:true
-        });
+        // $('#fullpage').fullpage({
+        //     //options here
+        //     autoScrolling:true
+        // });
 
 });
 

@@ -1,7 +1,7 @@
 <?php
 /* Template Name: Home */
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,7 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fullpage.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollify.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/path-slider.min.js"></script>
@@ -27,6 +28,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery.fullpage.min.css">
     <title>Главная</title>
 </head>
 <body>
@@ -142,7 +144,7 @@
             </div>
         </div>
 
-        <div class="page-battle section" id="battle-yakor">
+        <div class="section fp-auto-height page-battle" id="battle-yakor">
             <div class="column-content">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
                 <div class="info">
@@ -178,7 +180,7 @@
                 </div>
             </div>
         </div>
-        <div class="page-energi section" id="energi-yakor">
+        <div class="section fp-auto-height page-energi" id="energi-yakor">
             <div class="column-content">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
                 <div class="info">
@@ -216,7 +218,7 @@
                 </div>
             </div>
         </div>
-        <div class="page-battle page-stavni section" id="stavni-yakor">
+        <div class="section fp-auto-height page-battle page-stavni" id="stavni-yakor">
             <div class="column-content">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
                 <div class="info">
@@ -253,8 +255,8 @@
                 </div>
             </div>
         </div>
-        <h2 class="org">Над проектом работают</h2>
-        <div class="page_begin_decoration section">
+        <div data-section-name="employees" class="section fp-auto-height page_begin_decoration">
+            <h2 class="org">Над проектом работают</h2>
             <div class="path-slider">
                 <!-- Slider items -->
                 <a href="#" class="path-slider__item path-slider__item--1"><i class="fas fa-angle-double-right"></i><div class="item__circle"></div></a>
@@ -270,7 +272,7 @@
                 <a href="#" class="path-slider__item path-slider__item--11"><i class="fas fa-angle-double-right"></i><div class="item__circle"></div></a>
             </div>
         </div>
-        <div class="sponsori section" id="sponsori-yakor">
+        <div class="section fp-auto-height sponsori" id="sponsori-yakor">
             <h2 class="org">Если вы станете спонсором мероприятия, мы разместим ваш логотип здесь</h2>
             <div class="sponsori-tabl">
                 <div class="sponsori-tabl_item"></div>
@@ -284,6 +286,24 @@
             <div class="btn from-middle btn-align">стать спонсорoм</div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            // $('#fullpage').fullpage({
+            //     //options here
+            //     autoScrolling:true,
+            // });
+            $(function() {
+                $.scrollify({
+                    section : ".section",
+                    sectionName : "section-name",
+                    interstitialSection : "employees",
+                });
+            });
+
+            //methods
+            // $.fn.fullpage.setAllowScrolling(false);
+        });
+    </script>
 </body>
 <footer>
     <p>Designed &amp; Developed by
