@@ -8,13 +8,55 @@ $(document).ready(function () {
     });
 
     if (!window.location.pathname.includes('form')) {
+        var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
         initSlider();
-        $(function () {
-            $.scrollify({
-                section: ".section",
-                interstitialSection: ".inter"
+        if (!isMobile) {
+            $(function () {
+                $.scrollify({
+                    section: ".section",
+                    interstitialSection: ".inter",
+                    after: function (index, sections) {
+                        var battle = getCoordinates($('#battle-yakor'));
+                        var energy = getCoordinates($('#energi-yakor'));
+                        var stavni = getCoordinates($('#stavni-yakor'));
+                        var currPosition = $(document).scrollTop();
+                        if (currPosition >= battle.top && currPosition < battle.bottom ) {
+                            setActive($('#battle-nav'));
+                            setNoneActive($('#energy-nav'));
+                            setNoneActive($('#stavni-nav'));
+                        } else if (currPosition >= energy.top && currPosition < energy.bottom ) {
+                            setNoneActive($('#battle-nav'));
+                            setActive($('#energy-nav'));
+                            setNoneActive($('#stavni-nav'));
+                        } else if (currPosition >= stavni.top && currPosition < stavni.bottom ) {
+                            setNoneActive($('#battle-nav'));
+                            setNoneActive($('#energy-nav'));
+                            setActive($('#stavni-nav'));
+                        } else if (currPosition < battle.top) {
+                            setNoneActive($('#battle-nav'));
+                            setNoneActive($('#energy-nav'));
+                            setNoneActive($('#stavni-nav'));
+                        }
+                    }
+                });
             });
-        });
+        }
+    }
+
+    function getCoordinates(elem) {
+        var top = elem.position().top;
+        return {
+            top: top,
+            bottom: top + elem.height()
+        }
+    }
+
+    function setActive(elem) {
+        elem.css('opacity', '1');
+    }
+
+    function setNoneActive(elem) {
+        elem.css('opacity', '0.3');
     }
 
     $(".menu_mobile").on('click',function(){

@@ -29,6 +29,7 @@
     <title>Главная</title>
 </head>
 <body>
+<?//= var_dump(wp_upload_dir()); die();?>
         <div class="section inter ">
             <header>
                 <div class="logo">
@@ -107,7 +108,7 @@
                                     определения победителя среди танцоров в режиме "живого" соперничества
                                 </p>
                             </div>
-                            <div class="content-left content-fixed">
+                            <div id="battle-nav" class="content-left content-fixed">
                                 <h3>«Baraholka Battle»</h3>
                                 <div class="divader"></div>
                                 <h3>3/11/2018 7:00</h3>
@@ -121,7 +122,7 @@
                                     самое зрелищное мероприятие Всероссийского танцевального проекта «Барахолка».
                                 </p>
                             </div>
-                            <div class="content-left content-fixed">
+                            <div id="energy-nav" class="content-left content-fixed">
                                 <h3>«"Энергия искусств»</h3>
                                 <div class="divader"></div>
                                 <h3>4/11/2018 07:00</h3>
@@ -135,7 +136,7 @@
                                     мастер-классы, лекции и практик
                                 </p>
                             </div>
-                            <div class="content-left content-fixed">
+                            <div id="stavni-nav" class="content-left content-fixed">
                                 <h3>«STAVни»</h3>
                                 <div class="divader"></div>
                                 <h3>2-3/11/2018</h3>
@@ -171,7 +172,7 @@
                         Оплата осуществляется, либо на месте проведения баттла, либо до
                         мероприятия переводом на карту.
                         Вход для зрителей на финалы баттла - 100 рублей</p>
-                    <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
+                    <div class="btn from-left btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/POLOZhENIE_battl_BARAKhOLKA_2018_1.pdf'; ?>">скачать положение</a></div>
                     <div class="btn from-middle btn-align"><a href="#">Подать заявку</a></div>
                 </div>
                 <div class="content-right">
@@ -216,7 +217,7 @@
                         Дополнительный взнос в размере 100 руб. – Страхование жизни и здоровья
                         участника. (Обязательно)
                     </h3>
-                    <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
+                    <div class="btn from-left btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/Polozhenie_Energia_iskusstv_2018.pdf'; ?>">скачать положение</a></div>
                     <div class="btn from-top btn-align"><a href="/energy-form">Подать заявку</a></div>
                 </div>
             </div>
@@ -243,7 +244,7 @@
                         день мероприятия 450 рублей с человека. Дополнительный взнос в размере 100 руб. – Страхование жизни и здоровья
                         участника. (Обязательно)
                     </p>
-                    <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
+                    <div class="btn from-left btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/PolozhenieFET.docx'; ?>">скачать положение</a></div>
                     <div class="btn from-middle btn-align"><a href="#">Подать заявку</a></div>
                 </div>
                 <div class="content-right">
@@ -284,7 +285,7 @@
                 <div class="sponsori-tabl_item"></div>
                 <div class="sponsori-tabl_item"></div>
             </div>
-            <div class="btn from-middle btn-align">скачать комерчесское предложение</div>
+            <div class="btn from-middle btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/Kommercheskoe_predlozhenie_dlya_sponsorov.doc'; ?>">скачать комерчесское предложение</a></div>
             <div class="btn from-middle btn-align">стать спонсорoм</div>
         </div>
         <div class="section"></div>
