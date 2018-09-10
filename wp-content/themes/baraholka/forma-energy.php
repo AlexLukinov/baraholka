@@ -172,6 +172,7 @@
                     <input type="file" name="energy_spisok" class="baraholka-file">
                     <h3>Прикрепите видео танцевальной композиции</h3>
                     <input type="file" name="energy_video" class="baraholka-file">
+                    <input type="submit" id="submit-button" value="Сохранить" class="mountainbutton">
                 </div>
             </div>
         </div>

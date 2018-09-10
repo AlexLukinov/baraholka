@@ -70,7 +70,6 @@
             <?php
             if (isset($_SESSION['success_message'] )) {
                 ?>
-                <p class="alert alert-danger"><?php echo $_SESSION['success_message']; ?></p>
                 <script>
                     $(document).ready(function () {
                        setTimeout(function () {
@@ -86,16 +85,16 @@
                     <a href="#stavni-yakor">STAVни</a>
                     <a href="#energi-yakor" class="nav-a-energi">Энергия искусств</a>
                     <a href="#battle-yakor">Baraholka Battle</a>
-                    <a href="index.html">Главная</a>
+                    <a href="#home">Главная</a>
                 </nav>
                 <div id="menu-mobile" class="animated fadeIn" style="display: none">
-                    <a href="index.html">Главная</a>
-                    <a href="#">Baraholka Battle</a>
-                    <a href="#">Энергия искусств</a>
-                    <a href="#">STAVни</a>
-                    <a href="#">Спонсоры</a>
+<!--                    <a href="#home">Главная</a>-->
+                    <a href="#battle-yakor">Baraholka Battle</a>
+                    <a href="#energi-yakor">Энергия искусств</a>
+                    <a href="#stavni-yakor">STAVни</a>
+                    <a href="#sponsori-yakor">Спонсоры</a>
                 </div>
-                <div class="home">
+                <div class="home" id="home">
                     <div class="caption">
 <!--                        <h1 class="caption_h1 animated zoomIn">БАРАХОЛКА</h1>-->
                         <h1 class="caption_h1 animated zoomIn">Baraholka</h1>
@@ -169,8 +168,6 @@
                     <p>* * * Стоимость участия указана с учётом регистрации в группе, регистрация в
                         день мероприятия 450 рублей с человека, каждая дополнительная номинация
                         400 рублей с человека.
-                        Оплата осуществляется, либо на месте проведения баттла, либо до
-                        мероприятия переводом на карту.
                         Вход для зрителей на финалы баттла - 100 рублей</p>
                     <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
                     <div class="btn from-middle btn-align"><a href="#">Подать заявку</a></div>
@@ -179,8 +176,7 @@
                     <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/battle.png" alt="Baraholka Battle">
                     <p class="tiser">Площадка проведения баттла - «Молодежное пространство «Лофт»»,
                         Ставропольский дворец культуры и спорта, г. Ставрополь, ул. Ленина 251
-                        или Северо-Кавказский федеральный университет, г. Ставрополь, проспект
-                        Кулакова, 2 (9 корпус) концертный зал</p>
+                    </p>
                 </div>
             </div>
         </div>
@@ -202,20 +198,17 @@
                     <p>Обмен опытом между ведущими специалистами в сфере
                         танцевального искусства и участниками фестиваля-конкурса, развитие и
                         поддержка творческих контактов руководителей коллективов, создание
-                        условий для реализации творческого потенциала среди детей и подростков,
-                        повышение уровня исполнительского мастерства участников
-                        художественной самодеятельности
+                        условий для реализации творческого потенциала среди детей и подростков.
                     </p>
                 </div>
                 <div class="content-left">
                     <h2>Энергия искусств</h2>
                     <h3>Танцевальные дисциплины: Street Dance Эстрадный танец Спортивная хореография Lady Style
-                        Оригинальный жанр Народная стилизация Народный танец Современная хореография</h3>
+                        Оригинальный жанр Народная стилизация Народный танец Современная хореография
+                    </h3>
                     <h3>Сумма участия по предварительной оплате: <br>соло - 700руб <br> дуэт - 1400руб.<br>
                         малая форма - 1400руб (не зависимо от кол-ва участников в постановке)<br>
-                        ансамбль - 9000руб (не зависимо от кол-ва участников в постановке)<br>
-                        Дополнительный взнос в размере 100 руб. – Страхование жизни и здоровья
-                        участника. (Обязательно)
+                        ансамбль - 9000руб (не зависимо от кол-ва участников в постановке)
                     </h3>
                     <div class="btn from-left btn-align"><a href="#">скачать положение</a></div>
                     <div class="btn from-top btn-align"><a href="/energy-form">Подать заявку</a></div>
@@ -252,9 +245,7 @@
                     <p class="tiser">Фестиваль современной и экспериментальной хореографии «STAVни»
                         - это платформа для новых материалов и экспериментов, это фестиваль
                         воплощенного искусства, демонстрирующий новые идеи и исследования в
-                        хореографии, театре, музыке и исполнении. «STAVни» 2018 включает в себя
-                        более 100 перфомансов от лучших команд России, мастер-классы, лекции и
-                        практики</p>
+                        хореографии, театре, музыке и исполнении.</p>
                 </div>
             </div>
         </div>
@@ -278,12 +269,12 @@
         <div class="section inter  sponsori" id="sponsori-yakor">
             <h2 class="org">Если вы станете спонсором мероприятия, мы разместим ваш логотип здесь</h2>
             <div class="sponsori-tabl">
-                <div class="sponsori-tabl_item"></div>
-                <div class="sponsori-tabl_item"></div>
-                <div class="sponsori-tabl_item"></div>
-                <div class="sponsori-tabl_item"></div>
-                <div class="sponsori-tabl_item"></div>
-                <div class="sponsori-tabl_item"></div>
+                <a href="https://www.instagram.com/batut_1_stav/" class="sponsori-tabl_item sponsori-tabl_item1"></a>
+                <a href="#" class="sponsori-tabl_item sponsori-tabl_item2"></a>
+                <a href="#" class="sponsori-tabl_item sponsori-tabl_item3"></a>
+                <a href="#" class="sponsori-tabl_item sponsori-tabl_item4"></a>
+                <a href="#" class="sponsori-tabl_item sponsori-tabl_item5"></a>
+                <a href="#" class="sponsori-tabl_item sponsori-tabl_item6"></a>
             </div>
             <a href="#"><div class="btn from-middle btn-align">скачать комерчесское предложение</div></a>
         </div>
@@ -295,7 +286,7 @@
         <a href="https://vk.com/idgaryaninae">Elena Yushkova</a>
     </p>
     <a href="#"><i class="fas fa-arrow-up"></i></a>
-    <a href="#" class='btn open-modal' data-modal="#modal1">Open Modal</a>
+<!--    <a href="#" class='btn open-modal' data-modal="#modal1">Open Modal</a>-->
 
     <div class='modal' id='modal1'>
         <div class='content'>
