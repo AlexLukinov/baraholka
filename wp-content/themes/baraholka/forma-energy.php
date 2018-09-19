@@ -31,8 +31,12 @@
 
 <body>
 <div class="page-form">
-    <a href="#" class="back"><i class="fas fa-arrow-left"></i></a>
-    <h2>Форма заявки на участие в фестивале-конкурсе "Энергия искусств"</h2>
+    <a href="/" class="back"><i class="fas fa-arrow-left"></i></a>
+    <div class="form_caption">
+        <h2>Форма заявки на участие в фестивале-конкурсе "Энергия искусств"</h2>
+        <p>!!!перед заполнением рекомендуем еще раз внимательно ознакомиться с положением!!!</p>
+        <div class="btn from-left btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/Polozhenie_Energia_iskusstv_2018.pdf'; ?>">скачать положение</a></div>
+    </div>
     <form id="energy-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
         <input type="hidden" name="action" value="energy_form">
         <div class="tabs">
@@ -63,7 +67,7 @@
                         <img class="profile" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
                         <div class="information">
                             <h3 class="user">Основная информация</h3>
-                            <h5 class="account">Будьте внимательны при заполнении</h5>
+                            <h5 class="account">Для более удобной обработки информации на один танцевальный номер подается одна заявка</h5>
                         </div>
                     </div>
                     <div class="formcontainers">
@@ -125,9 +129,10 @@
                         <h5 class="account">все поля обязательны для заполнения</h5>
                     </div>
                     <div class="formcontainers">
+
                         <div class="formfields">
-                            <select id="energy_nom" class="texter" name="energy_nom" required="required">
-                                <option disabled>Выберите номинацию</option>
+                            <select id="energy_kat" class="texter" type="text" name="energy_kat" placeholder="Категория" required="required">
+                                <option disabled>Выберите категорию</option>
                                 <option value="Народный танец">Народный танец</option>
                                 <option selected value="Народная стилизация">Народная стилизация</option>
                                 <option value="Street Dance">Street Dance</option>
@@ -138,11 +143,30 @@
                                 <option value="Lady Style">Lady Style</option>
                                 <option value="Оригинальный жанр">Оригинальный жанр</option>
                             </select>
+                            <label class="formlabel">Категория</label>
+                        </div>
+                        <div class="formfields">
+                            <select id="energy_nom" class="texter" name="energy_nom" required="required">
+                                <option disabled>Выберите номинацию</option>
+                                <option value="Соло">Соло</option>
+                                <option selected value="Дует">Дует</option>
+                                <option value="Малая форма">Малая форма</option>
+                                <option value="Ансамбли 8-23 чел">Ансамбли 8-23 чел</option>
+                                <option value="Ансамбли от 24 чел">Ансамбли от 24 чел</option>
+                                <option value="Дебют – на сцене впервые">Дебют – на сцене впервые</option>
+                            </select>
                             <label class="formlabel">Номинация</label>
                         </div>
                         <div class="formfields">
-                            <input id="energy_kat" class="texter" type="text" name="energy_kat" placeholder="Категория" required="required" />
-                            <label class="formlabel">Категория</label>
+                            <select id="energy_age" class="texter" name="energy_age" required="required">
+                                <option disabled>Возрастная категория</option>
+                                <option value="«Бэби» - от 4 до 6 лет">«Бэби» - от 4 до 6 лет</option>
+                                <option selected value="Дети – от 7 до 11 лет">Дети – от 7 до 11 лет</option>
+                                <option value="Юниоры – от 12 до 15 лет">Юниоры – от 12 до 15 лет</option>
+                                <option value="Взрослые – от 16 лет и старше">Взрослые – от 16 лет и старше</option>
+                                <option value="Смешанная группа">Смешанная группа</option>
+                            </select>
+                            <label class="formlabel">Возрастная категория</label>
                         </div>
                         <div class="formfields">
                             <input id="energy_name-dance" class="texter" type="text" name="energy_name-dance" placeholder="Название танцевальной композиции" required="required" />
@@ -172,6 +196,33 @@
                     <input type="file" name="energy_spisok" class="baraholka-file">
                     <h3>Прикрепите видео танцевальной композиции</h3>
                     <input type="file" name="energy_video" class="baraholka-file">
+                    <label for="sogl"><input type="checkbox" name="sogl" required="required">
+                        Я подтверждаю согласие на обработку
+                        <a href="#modal-sogl">персональных данных</a>
+                    </label>
+                    <div id="modal-sogl" class="modal-sogl">
+                        <div>
+                            <a href="#close-sogl" title="Закрыть" class="close-sogl">Oк</a>
+                            <h2>Согласие на обработку персональных данных</h2>
+                            <p>Пользователь, регистрируясь на данном сайте, обязуется принять
+                                Согласие на обработку персональных данных (далее – Согласие).
+                                Принятием (акцептом) оферты настоящего Согласия является регистрация
+                                Пользователя на Сайте. Пользователь дает свое согласие организаторам проекта,
+                                на обработку своих персональных данных со следующими условиями:
+                            </p>
+                            <p>Согласие дается на обработку необходимых в связи с полноценной регистрацией участников,
+                                обеспечения личной безопасности, следующих персональных данных: </p>
+                            <p>
+                                фамилия, имя, отчество; номера телефонов, адрес электронной почты;
+                            </p>
+                            <p>Я уведомлен(а) о
+                                своем праве отозвать согласие путем подачи ОПЕРАТОРУ письменного заявления.
+                                Подтверждаю, что я ознакомлен(а) с Федеральным законом от 27.07.2006 No152-ФЗ «О персональных данных»,
+                                с моими правами и обязанностями в области защиты персональных данных,
+                                в том числе с возможными последствиями в случае моего отказа от согласия
+                                на обработку персональных данных.</p>
+                        </div>
+                    </div>
                     <input type="submit" id="submit-button" value="Сохранить" class="mountainbutton">
                 </div>
             </div>

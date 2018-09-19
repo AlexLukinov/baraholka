@@ -3,18 +3,60 @@
 
 $(document).ready(function () {
 
-    $("a.path-slider__item").click(function (e) {
-        e.preventDefault();
-    });
+    // $("a.path-slider__item").click(function (e) {
+    //     e.preventDefault();
+    // });
 
     if (!window.location.pathname.includes('form')) {
-        initSlider();
-        $(function () {
-            $.scrollify({
-                section: ".section",
-                interstitialSection: ".inter"
+        var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+        // initSlider();
+        if (!isMobile) {
+            $(function () {
+                $.scrollify({
+                    section: ".section",
+                    interstitialSection: ".inter",
+                    after: function (index, sections) {
+                        var battle = getCoordinates($('#battle-yakor'));
+                        var energy = getCoordinates($('#energi-yakor'));
+                        var stavni = getCoordinates($('#stavni-yakor'));
+                        var currPosition = $(document).scrollTop();
+                        if (currPosition >= battle.top && currPosition < battle.bottom ) {
+                            setActive($('#battle-nav'));
+                            setNoneActive($('#energy-nav'));
+                            setNoneActive($('#stavni-nav'));
+                        } else if (currPosition >= energy.top && currPosition < energy.bottom ) {
+                            setNoneActive($('#battle-nav'));
+                            setActive($('#energy-nav'));
+                            setNoneActive($('#stavni-nav'));
+                        } else if (currPosition >= stavni.top && currPosition < stavni.bottom ) {
+                            setNoneActive($('#battle-nav'));
+                            setNoneActive($('#energy-nav'));
+                            setActive($('#stavni-nav'));
+                        } else if (currPosition < battle.top) {
+                            setNoneActive($('#battle-nav'));
+                            setNoneActive($('#energy-nav'));
+                            setNoneActive($('#stavni-nav'));
+                        }
+                    }
+                });
             });
-        });
+        }
+    }
+
+    function getCoordinates(elem) {
+        var top = elem.position().top;
+        return {
+            top: 0,
+            bottom: top
+        }
+    }
+
+    function setActive(elem) {
+        elem.css('opacity', '1');
+    }
+
+    function setNoneActive(elem) {
+        elem.css('opacity', '0.3');
     }
 
     $(".menu_mobile").on('click',function(){
@@ -87,6 +129,73 @@ $(document).ready(function () {
         {
             $('#fourth-tab').first().trigger('click');
         }
+    });
+
+    var $slides = undefined,
+        interval = undefined,
+        $selectors = undefined,
+        $btns = undefined,
+        currentIndex = undefined,
+        nextIndex = undefined;
+
+    var cycle = function cycle(index) {
+        var $currentSlide = undefined,
+            $nextSlide = undefined,
+            $currentSelector = undefined,
+            $nextSelector = undefined;
+
+        nextIndex = index !== undefined ? index : nextIndex;
+
+        $currentSlide = $($slides.get(currentIndex));
+        $currentSelector = $($selectors.get(currentIndex));
+
+        $nextSlide = $($slides.get(nextIndex));
+        $nextSelector = $($selectors.get(nextIndex));
+
+        $currentSlide.removeClass("active").css("z-index", "0");
+
+        $nextSlide.addClass("active").css("z-index", "1");
+
+        $currentSelector.removeClass("current");
+        $nextSelector.addClass("current");
+
+        currentIndex = index !== undefined ? nextIndex : currentIndex < $slides.length - 1 ? currentIndex + 1 : 0;
+
+        nextIndex = currentIndex + 1 < $slides.length ? currentIndex + 1 : 0;
+    };
+
+    $(function () {
+        currentIndex = 0;
+        nextIndex = 1;
+
+        $slides = $(".slide");
+        $selectors = $(".selector");
+        $btns = $(".btn");
+
+        $slides.first().addClass("active");
+        $selectors.first().addClass("current");
+
+        interval = window.setInterval(cycle, 6000);
+
+        $selectors.on("click", function (e) {
+            var target = $selectors.index(e.target);
+            if (target !== currentIndex) {
+                window.clearInterval(interval);
+                cycle(target);
+                interval = window.setInterval(cycle, 6000);
+            }
+        });
+
+        $btns.on("click", function (e) {
+            window.clearInterval(interval);
+            if ($(e.target).hasClass("prev")) {
+                var target = currentIndex > 0 ? currentIndex - 1 : $slides.length - 1;
+                cycle(target);
+            } else if ($(e.target).hasClass("next")) {
+                cycle();
+            }
+            interval = window.setInterval(cycle, 6000);
+        });
     });
 });
 
@@ -272,7 +381,6 @@ function getSinPath(options) {
                         if (Boolean(
                             $("#energy_nom").val() &&
                             $("#energy_kat").val() &&
-                            $("#energy_name-dance").val() &&
                             $("#energy_time").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
@@ -283,13 +391,7 @@ function getSinPath(options) {
                     } else {
                         if (Boolean(
                             $("#energy_nazv").val() &&
-                            $("#energy_gorod").val() &&
-                            $("#energy_ruk").val() &&
-                            $("#energy_ped").val() &&
-                            $("#energy_sopr").val() &&
-                            $("#energy_e-mail").val() &&
-                            $("#energy_tel").val() &&
-                            $("#energy_adres").val()
+                            $("#energy_tel").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
                                 .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(i).addClass('active');
@@ -309,7 +411,6 @@ function getSinPath(options) {
                 $(this).click(function(){
                     if ($('#third-tab').hasClass('active')) {
                         if (Boolean(
-                            $("#stavni_name-dance").val() &&
                             $("#stavni_time").val() &&
                             $("#stavni_kol").val()
                         )) {
@@ -321,9 +422,6 @@ function getSinPath(options) {
                     } else {
                         if (Boolean(
                             $("#stavni_nazv").val() &&
-                            $("#stavni_gorod").val() &&
-                            $("#stavni_ruk").val() &&
-                            $("#stavni_e-mail").val() &&
                             $("#stavni_tel").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
