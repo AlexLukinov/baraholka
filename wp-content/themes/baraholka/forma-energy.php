@@ -31,7 +31,7 @@
 
 <body>
 <div class="page-form">
-    <a href="#" class="back"><i class="fas fa-arrow-left"></i></a>
+    <a href="/" class="back"><i class="fas fa-arrow-left"></i></a>
     <h2>Форма заявки на участие в фестивале-конкурсе "Энергия искусств"</h2>
     <form id="energy-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
         <input type="hidden" name="action" value="energy_form">
@@ -172,7 +172,7 @@
                     <input type="file" name="energy_spisok" class="baraholka-file">
                     <h3>Прикрепите видео танцевальной композиции</h3>
                     <input type="file" name="energy_video" class="baraholka-file">
-                    <input type="submit" id="submit-button" class="mountainbutton">Сохранить</input>
+                    <input type="submit" id="submit-button" value="Сохранить" class="mountainbutton">
                 </div>
             </div>
         </div>

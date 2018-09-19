@@ -174,6 +174,7 @@ function energy_form_handler() {
         add_post_meta($post_id, 'energy_ruk', $_POST['energy_ruk']);
         add_post_meta($post_id, 'energy_ped', $_POST['energy_ped']);
         add_post_meta($post_id, 'energy_sopr', $_POST['energy_sopr']);
+        add_post_meta($post_id, 'energy_age', $_POST['energy_age']);
         add_post_meta($post_id, 'energy_adres', $_POST['energy_adres']);
         add_post_meta($post_id, 'energy_e-mail', $_POST['energy_e-mail']);
         add_post_meta($post_id, 'energy_tel', $_POST['energy_tel']);

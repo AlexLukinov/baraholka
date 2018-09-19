@@ -28,7 +28,7 @@
 </head>
 <body>
   <div class="page-form">
-      <a href="#" class="back"><i class="fas fa-arrow-left"></i></a>
+      <a href="/" class="back"><i class="fas fa-arrow-left"></i></a>
       <h2>Форма заявки на участие в фестивале экспериментальной и современной хореографии "STAVni"</h2>
   <form id="stavni-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>"  enctype="multipart/form-data" method="post" class="experiment">
     <div class="tabs">
