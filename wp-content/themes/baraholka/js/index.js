@@ -381,7 +381,6 @@ function getSinPath(options) {
                         if (Boolean(
                             $("#energy_nom").val() &&
                             $("#energy_kat").val() &&
-                            $("#energy_name-dance").val() &&
                             $("#energy_time").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
@@ -392,13 +391,7 @@ function getSinPath(options) {
                     } else {
                         if (Boolean(
                             $("#energy_nazv").val() &&
-                            $("#energy_gorod").val() &&
-                            $("#energy_ruk").val() &&
-                            $("#energy_ped").val() &&
-                            $("#energy_sopr").val() &&
-                            $("#energy_e-mail").val() &&
-                            $("#energy_tel").val() &&
-                            $("#energy_adres").val()
+                            $("#energy_tel").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
                                 .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(i).addClass('active');
@@ -418,9 +411,7 @@ function getSinPath(options) {
                 $(this).click(function(){
                     if ($('#third-tab').hasClass('active')) {
                         if (Boolean(
-                            $("#stavni_name-dance").val() &&
-                            $("#stavni_time").val() &&
-                            $("#stavni_kol").val()
+                            $("#stavni_time").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
                                 .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(i).addClass('active');
@@ -430,9 +421,6 @@ function getSinPath(options) {
                     } else {
                         if (Boolean(
                             $("#stavni_nazv").val() &&
-                            $("#stavni_gorod").val() &&
-                            $("#stavni_ruk").val() &&
-                            $("#stavni_e-mail").val() &&
                             $("#stavni_tel").val()
                         )) {
                             $(this).addClass('active').siblings().removeClass('active')
