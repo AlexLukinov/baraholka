@@ -51,7 +51,7 @@ h2  {
 }
 h3 {
     line-height: 1.5;
-    margin: 7px 0;
+    margin: 5px 0;
     font-family: 'Panton-Light';
     font-size: 1em;
     color: #CBFFC8;
@@ -65,7 +65,8 @@ p {
     z-index: 1;
 }
 .logo {
-    width: 11%;
+    margin-left: 2.7%;
+    width: 6%;
 }
 header {
     height: 15vh;
@@ -342,7 +343,7 @@ ul {
     flex-direction: column;
     justify-content: flex-start;
     width: 44%;
-    height: max-content;
+    /*height: 100%;*/
 }
 .content-fixed {
     position: fixed;
@@ -963,7 +964,7 @@ h1.main, p.demos {
 
 .text-color {
     color: #f7f7f7;
-    font-size: 60px;
+    font-size: 50px;
 }
 h3.text-color {
     z-index: 1;
@@ -1259,22 +1260,24 @@ ul.tabs__caption li.active{
 a.sponsori-tabl_item {
     width: 20%;
     height: 200px;
-    border: 1px solid #cbffc8;
+    /*border: 1px solid #cbffc8;*/
     margin: 20px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 .sponsori-tabl_item1 {
-    background-image: url("../img/batut.jpg");
+    background-image: url("../img/maximum.png");
 }
 .sponsori-tabl_item2 {
-    background-image: url("../img/sponsor2.jpg");
+    background-image: url("../img/gorod.png");
 }
 .sponsori-tabl_item3 {
-    background-image: url("../img/sponsor3.jpg");
+    background-color: white;
+    background-image: url("../img/ncfu.png");
 }
 .sponsori-tabl_item4 {
-    background-image: url("../img/sponsor4.jpg");
+    background-image: url("../img/batut.jpg");
 }
 .sponsori-tabl_item5 {
     background-image: url("../img/sponsor5.jpg");
@@ -1408,7 +1411,11 @@ footer .fa-arrow-alt-circle-up {
 
 
 
-
+@media (max-width: 1365.99px) {
+    h2 {
+        font-size: 50px;
+    }
+}
 @media (max-width: 1024.99px) {
     .number_tel {
         font-size: 34px;
@@ -1418,6 +1425,9 @@ footer .fa-arrow-alt-circle-up {
     }
     h1 {
         font-size: 100px;
+    }
+    h2 {
+        font-size: 20px;
     }
     .content-dn {
         display: none;
@@ -1429,7 +1439,10 @@ footer .fa-arrow-alt-circle-up {
         width: 75%;
     }
     #slides .slide .slide-right {
-        display: none;
+        right: 3%;
+        top: 43%;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 45%;
     }
 }
 
@@ -1444,7 +1457,7 @@ footer .fa-arrow-alt-circle-up {
         display: none;
     }
     .logo {
-        width: 28%;
+        width: 18%;
     }
     .soc_icons ul li {
         font-size: 15px;
@@ -1535,7 +1548,7 @@ footer .fa-arrow-alt-circle-up {
         border-bottom: 1px solid #f78f93;
     }
     .page-battle-container, .page-energi-container {
-        height: 175vh;
+        height: inherit;
         flex-direction: column;
         width: 97%;
         justify-content: space-between;
@@ -1551,7 +1564,7 @@ footer .fa-arrow-alt-circle-up {
         flex-direction: column;
     }
     .btn {
-        margin: auto;
+        text-align: center;
     }
     .form .button {
         margin: 50px auto;
@@ -1588,6 +1601,8 @@ footer .fa-arrow-alt-circle-up {
     }
     .page-battle, .page-energi {
         width: 100%;
+        align-self: flex-start;
+        height: 1300px;
     }
     .sponsori {
         height: auto;
@@ -1626,8 +1641,8 @@ footer .fa-arrow-alt-circle-up {
     footer p {
         text-align: center;
     }
-    .content-img {
-        width: 125%;
+    .img {
+        width: 400px;
     }
     .page_begin_decoration {
         width: 100%;
@@ -1642,8 +1657,15 @@ footer .fa-arrow-alt-circle-up {
     #slides .slide .title {
         font-size: 3em;
     }
-
+    .text-color {
+        font-size: 40px;
+    }
+    #slides .slide .slide-left img {
+        object-position: 65% 65%;
+    }
 }
 @media (max-width: 575.99px) {
-
+    .content-right, .content-left {
+        height: 620px;
+    }
 }

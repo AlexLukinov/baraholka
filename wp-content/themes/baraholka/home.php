@@ -8,7 +8,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="танцевальный проект, барахолка, танцевальный батл">
+    <meta name="keywords" content="фестиваль танцев, фестиваль танца, фестиваль детской хореографии,
+    танцевальный фестиваль, народный танец, современный танец, бальный танец, фестиваль уличных танцев,
+    стрит шоу, street show, lady style show, танцевальное шоу, хореографический конкурс, танцевальный проект,
+    барахолка, танцевальный батл, конкурс современной хореографии, фестиваль современной хореографии,
+    фестиваль экспериментального танца, танцевальная битва, всероссийский танцевальный проект, baraholka,
+    фестиваль современной хореографии 2018, всероссийский фестиваль,
+    экспериментал, experimental dance, dancing battle,
+      dance battle, dance battle 2018, break dance battle, street dance battle, hip hop dance battle,
+      dancehall, house battle, танцевальный проект">
+
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
@@ -26,6 +35,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
     <title>Главная</title>
 </head>
 <body>
@@ -89,7 +99,6 @@
                     <a href="#home">Главная</a>
                 </nav>
                 <div id="menu-mobile" class="animated fadeIn" style="display: none">
-<!--                    <a href="#home">Главная</a>-->
                     <a href="#battle-yakor">Baraholka Battle</a>
                     <a href="#energi-yakor">Энергия искусств</a>
                     <a href="#stavni-yakor">STAVни</a>
@@ -97,7 +106,6 @@
                 </div>
                 <div class="home" id="home">
                     <div class="caption">
-<!--                        <h1 class="caption_h1 animated zoomIn">БАРАХОЛКА</h1>-->
                         <h1 class="caption_h1 animated zoomIn">Baraholka</h1>
                         <h2 class="caption_h2">Всероссийский танцевальный проект</h2>
                     </div>
@@ -139,7 +147,7 @@
                             <div id="stavni-nav" class="content-left content-fixed">
                                 <h3>«STAVни»</h3>
                                 <div class="divader"></div>
-                                <h3>18/11/2018</h3>
+                                <h3>25/01/2019</h3>
                                 <div class="btn from-right"><a href="/stavni-form">Стать частью</a></div>
                             </div>
                         </div>
@@ -163,26 +171,26 @@
             <div class="page-battle-container">
                 <div class="content-left">
                     <h2 class="text-color">Baraholka Battle</h2>
-                    <h3 class="text-color">Направления:<br> Hih-hop :: House<br> Dancehall :: Breacking<br> Lady Style :: Experimental</h3>
+                    <h3 class="text-color">Направления:<br> Hih-hop :: House<br> Dancehall :: Breacking<br> Lady Style ::</h3>
                     <h3 class="text-color">Стоимость участия - от 350руб.</h3>
                     <p>* * * Дополнительная номинация будет стоить 250 руб. с человека, при оплате
                         до мероприятия и регистрации в группе. При оплате на месте дополнительная номинация 350 руб. с человека.
-                        Стоимость участия указана с учетом регистрации в группе, регистрация в день мероприятия - 450 руб. с человека.
+                        Стоимость участия указана с учетом регистрации в группе. Регистрация в день мероприятия - 450 руб. с человека.
                         Вход для зрителей на финалы баттла - 100 рублей</p>
                     <div class="btn from-left btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/POLOZhENIE_battl_BARAKhOLKA_2018_1.pdf'; ?>">скачать положение</a></div>
                     <div class="btn from-middle btn-align"><a href="https://vk.com/battle_baraholka">Подать заявку</a></div>
                 </div>
                 <div class="content-right">
                     <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/battle.png" alt="Baraholka Battle">
-                    <p class="tiser">Площадка проведения баттла - «Молодежное пространство «Лофт»»,
-                        Ставропольский дворец культуры и спорта, г. Ставрополь, ул. Ленина 251
+                    <p class="tiser">Площадка проведения батла - Северо-Кавказский федеральный университет, г. Ставрополь,
+                        проспект Кулакова, 2 (9 корпус) концертный зал
                     </p>
                 </div>
             </div>
         </div>
         <div class="section inter  page-energi" id="energi-yakor">
             <div class="column-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="пластический театр">
                 <div class="info">
                     <div class="soc_icons">
                         <ul>
@@ -194,10 +202,9 @@
             </div>
             <div class="page-energi-container">
                 <div class="content-right">
-                    <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/energi.png" alt="Энергия искусств">
+                    <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/energi.png" alt="фестиваль танцев">
                     <p>Обмен опытом между ведущими специалистами в сфере
-                        танцевального искусства и участниками фестиваля-конкурса, развитие и
-                        поддержка творческих контактов руководителей коллективов, создание
+                        танцевального искусства и участниками фестиваля-конкурса, создание
                         условий для реализации творческого потенциала среди детей и подростков.
                     </p>
                 </div>
@@ -234,7 +241,7 @@
                     <h2 class="text-color">STAVни</h2>
                     <h3 class="text-color">Категории: Performance MINI :: Performance MAXI :: Battles</h3>
                     <h3 class="text-color">Стоимость участия:<br> Performance MINI-5000руб <br>Performance MAXI-10000руб <br>Battles-350руб</h3>
-                    <h3 class="text-color">Возрастная категория участников: от 4-х лет</h3>
+<!--                    <h3 class="text-color">Возрастная категория участников: от 4-х лет</h3>-->
                     <p>* * * Стоимость участия указана с учётом предварительной регистрации на мероприятие, регистрация в
                         день мероприятия 450 рублей с человека. Дополнительный взнос в размере 100 руб. – Страхование жизни и здоровья
                         участника. (Обязательно)
@@ -246,8 +253,8 @@
                     <img class="content-img" src="<?php echo get_template_directory_uri(); ?>/img/stavni.png" alt="Baraholka Battle">
                     <p class="tiser">Фестиваль современной и экспериментальной хореографии «STAVни»
                         - это платформа для новых материалов и экспериментов, это фестиваль
-                        воплощенного искусства, демонстрирующий новые идеи и исследования в
-                        хореографии, театре, музыке и исполнении.</p>
+                        воплощенного искусства, демонстрирующий новые идеи в
+                        хореографии, театре, музыке.</p>
                 </div>
             </div>
         </div>
@@ -265,9 +272,9 @@
                     <li class="slide">
                         <div class="slide-partial slide-left"><img src="<?php echo get_template_directory_uri(); ?>/img/2.jpg"/></div>
                         <div class="slide-partial slide-right">
-                            <span>Руководитель штаба<br>танцевального проекта -<br>Гречман Иннесса</span>
+                            <span>Руководитель штаба<br>танцевального проекта -<br>Гречман Инесса</span>
                         </div>
-                        <h1 class="title"><span class="title-text">Иннеса</span></h1>
+                        <h1 class="title"><span class="title-text">Инеcса</span></h1>
                     </li>
                     <li class="slide">
                         <div class="slide-partial slide-left"><img src="<?php echo get_template_directory_uri(); ?>/img/3.jpg"/></div>
@@ -300,9 +307,9 @@
                     <li class="slide">
                         <div class="slide-partial slide-left"><img src="<?php echo get_template_directory_uri(); ?>/img/7.jpg"/></div>
                         <div class="slide-partial slide-right">
-                            <span>Руководитель службы по работе <br>с партнёрами - <br>Швачко Дарья </span>
+                            <span>Руководитель службы по работе <br>с партнёрами - <br>Коврижных Светлана </span>
                         </div>
-                        <h1 class="title"><span class="title-text">Дарья</span></h1>
+                        <h1 class="title"><span class="title-text">Светлана</span></h1>
                     </li>
                     <li class="slide">
                         <div class="slide-partial slide-left"><img src="<?php echo get_template_directory_uri(); ?>/img/8.jpg"/></div>
@@ -327,7 +334,16 @@
                     </li>
                     <li class="slide">
                         <div class="slide-partial slide-left"><img src="<?php echo get_template_directory_uri(); ?>/img/11.jpg"/></div>
-                        <div class="slide-partial slide-right"><span>Здесь должны быть <br>слова про дружный<br> сплоченный коллектив профессионалов</span></div>
+                        <div class="slide-partial slide-right">
+                            <span>Куратор Всероссийского <br>"Baraholka Battle"- <br> Харций Алина</span>
+                        </div>
+                        <h1 class="title"><span class="title-text">Алина</span></h1>
+                    </li>
+                    <li class="slide">
+                        <div class="slide-partial slide-left"><img src="<?php echo get_template_directory_uri(); ?>/img/12.jpg"/></div>
+                        <div class="slide-partial slide-right"><span class="title-text">Команда организаторов <br>Всероссийского проекта «Барахолка» -<br>
+                                люди, которые создают для вас<br> масштабное танцевальное <br>мероприятие четвертый год подряд.<br>
+                               </span></div>
                     </li>
                 </ul>
                 <ul id="slide-select">
@@ -348,27 +364,26 @@
             </div>
         </div>
         <div class="section inter  sponsori" id="sponsori-yakor">
-            <h2 class="org">Если вы станете спонсором мероприятия, мы разместим ваш логотип здесь</h2>
+            <h2 class="org">Главные организаторы и спонсоры проекта</h2>
             <div class="sponsori-tabl">
-                <a href="https://www.instagram.com/batut_1_stav/" class="sponsori-tabl_item sponsori-tabl_item1"></a>
-                <a href="#" class="sponsori-tabl_item sponsori-tabl_item2"></a>
-                <a href="#" class="sponsori-tabl_item sponsori-tabl_item3"></a>
-                <a href="#" class="sponsori-tabl_item sponsori-tabl_item4"></a>
+                <a href="https://maximum26.ru/" class="sponsori-tabl_item sponsori-tabl_item1"></a>
+                <a href="https://ставрополь.рф/" class="sponsori-tabl_item sponsori-tabl_item2"></a>
+                <a href="http://www.ncfu.ru/" class="sponsori-tabl_item sponsori-tabl_item3"></a>
+                <a href="https://www.instagram.com/batut_1_stav/" class="sponsori-tabl_item sponsori-tabl_item4"></a>
                 <a href="#" class="sponsori-tabl_item sponsori-tabl_item5"></a>
                 <a href="#" class="sponsori-tabl_item sponsori-tabl_item6"></a>
             </div>
 
-            <div class="btn from-middle btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/Kommercheskoe_predlozhenie_dlya_sponsorov.doc'; ?>">скачать комерчесское предложение</a></div>
+            <div class="btn from-middle btn-align"><a href="<?= wp_upload_dir()['baseurl'].'/Kommercheskoe_predlozhenie_dlya_sponsorov.doc'; ?>">скачать коммерчесское предложение</a></div>
         </div>
         <div class="section"></div>
-</body>
 <footer>
     <p>Designed &amp; Developed by
         <a href="https://vk.com/ekaterinalukinova">Ekaterina Lukinova</a> exclusively for
         <a href="https://vk.com/idgaryaninae">Elena Yushkova</a>
     </p>
     <a href="#"><i class="fas fa-arrow-up"></i></a>
-<!--    <a href="#" class='btn open-modal' data-modal="#modal1">Open Modal</a>-->
+    <!--    <a href="#" class='btn open-modal' data-modal="#modal1">Open Modal</a>-->
 
     <div class='modal' id='modal1'>
         <div class='content'>
@@ -380,6 +395,36 @@
         </div>
     </div>
 </footer>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter50528662 = new Ya.Metrika2({
+                    id:50528662,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/50528662" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+
 
 
 
