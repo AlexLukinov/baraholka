@@ -1,11 +1,11 @@
-
-
-
 $(document).ready(function () {
 
     // $("a.path-slider__item").click(function (e) {
     //     e.preventDefault();
     // });
+    setNoneActive($('#battle-nav'));
+    setNoneActive($('#energy-nav'));
+    setNoneActive($('#stavni-nav'));
 
     if (!window.location.pathname.includes('form')) {
         var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
@@ -20,19 +20,21 @@ $(document).ready(function () {
                         var energy = getCoordinates($('#energi-yakor'));
                         var stavni = getCoordinates($('#stavni-yakor'));
                         var currPosition = $(document).scrollTop();
-                        if (currPosition >= battle.top && currPosition < battle.bottom ) {
+                        console.log(currPosition == 0);
+
+                        if (currPosition >= battle.top && currPosition < battle.bottom && currPosition != 0) {
                             setActive($('#battle-nav'));
                             setNoneActive($('#energy-nav'));
                             setNoneActive($('#stavni-nav'));
-                        } else if (currPosition >= energy.top && currPosition < energy.bottom ) {
+                        } else if (currPosition >= energy.top && currPosition < energy.bottom && currPosition != 0) {
                             setNoneActive($('#battle-nav'));
                             setActive($('#energy-nav'));
                             setNoneActive($('#stavni-nav'));
-                        } else if (currPosition >= stavni.top && currPosition < stavni.bottom ) {
+                        } else if (currPosition >= stavni.top && currPosition < stavni.bottom && currPosition != 0) {
                             setNoneActive($('#battle-nav'));
                             setNoneActive($('#energy-nav'));
                             setActive($('#stavni-nav'));
-                        } else if (currPosition < battle.top) {
+                        } else if (currPosition == 0 || currPosition >= stavni.bottom ) {
                             setNoneActive($('#battle-nav'));
                             setNoneActive($('#energy-nav'));
                             setNoneActive($('#stavni-nav'));
