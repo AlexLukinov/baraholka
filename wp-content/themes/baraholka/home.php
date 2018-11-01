@@ -43,7 +43,7 @@
         <div class="section inter ">
             <header>
                 <div class="logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logotype" width="100%">
+                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logotype" width="100%"></a>
                 </div>
                 <div class="pre">
                     <div class="sp-container">
@@ -158,7 +158,7 @@
 
         <div class="section inter  page-battle" id="battle-yakor">
             <div class="column-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+                <a href="https://vk.com/battle_baraholka"><img src="<?php echo get_template_directory_uri(); ?>/img/logobaraholka.png" alt="лого-батл"></a>
                 <div class="info">
                     <div class="soc_icons">
                         <ul>
@@ -190,7 +190,7 @@
         </div>
         <div class="section inter  page-energi" id="energi-yakor">
             <div class="column-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="пластический театр">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logoenergy.png" alt="пластический театр">
                 <div class="info">
                     <div class="soc_icons">
                         <ul>
@@ -226,7 +226,7 @@
         </div>
         <div class="section inter  page-battle page-stavni" id="stavni-yakor">
             <div class="column-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logostavni.png" alt="">
                 <div class="info">
                     <div class="soc_icons">
                         <ul>
